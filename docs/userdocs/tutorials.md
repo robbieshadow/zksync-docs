@@ -293,48 +293,19 @@
 \
 
 
-1. Go to "Files", select "+ Import", and choose your image.\
+1. به "Files" بروید، "+ Import" را انتخاب کنید و تصویر خود را انتخاب کنید\
 
 
-![m2.png](https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/m2.png)
-
-\
 
 
-1. Click on the three dots at the end of the row of your imported image and click on "Copy CID" (Content Identifier).\
+<figure><img src="https://docs.zksync.io/m2.png" alt=""><figcaption></figcaption></figure>
 
+1. روی سه نقطه در انتهای ردیف تصویر وارد شده خود کلیک کنید و روی "Copy CID" (شناسه محتوا) کلیک کنید.
 
-![m3.png](https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/m3.png)
+<figure><img src="https://docs.zksync.io/m3.png" alt=""><figcaption></figcaption></figure>
 
-\
-
-
-1. Use the text below to create a metadata.json file or click the link to [create your file online](https://codebeautify.org/online-json-editor/cb3f2098).
-
-```json
-{
-  "name": "Your NFT name",
-  "image": "https://ipfs.io/ipfs/CID of Image",
-  "description": "Description of your NFT",
-  "external_url": "Optional URL",
-  "attributes": [
-    {
-      "trait_type": "Attribute 1",
-      "value": "Value 1"
-    },
-    {
-      "trait_type": "Attribute 2",
-      "value": "Value 2"
-    },
-    {
-      "trait_type": "Attribute 3",
-      "value": "Value 3"
-    }
-  ]
-}
-```
-
-1.  Enter the CID from step 3 at the end of the `"image": "https://ipfs.io/ipfs/` section and fill out the rest of the values as needed.
+1. از متن زیر برای ایجاد یک فایل metadata.json استفاده کنید یا روی پیوند برای ایجاد فایل خود به صورت آنلاین کلیک کنید (پنجره جدید باز می شود)
+2.  Enter the CID from step 3 at the end of the `"image": "https://ipfs.io/ipfs/` section and fill out the rest of the values as needed.
 
     > Example metadata.json file:
 
