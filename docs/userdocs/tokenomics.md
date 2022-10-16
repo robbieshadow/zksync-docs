@@ -1,25 +1,17 @@
-# Tokenomics
+# توکنومیک
 
-[[toc]]
+## مدل کسب و کار Matter Labs چیست؟
 
-## What is Matter Labs' business model?
+در حال حاضر، این سرویس تا حد امکان نزدیک به هزینه های سرسام آور عمل می کند و تا زمانی که سیستم غیرمتمرکز شود، به همین شکل باقی خواهد ماند. برای جبران ایمن هزینه‌ها، zkSync هر از چندگاهی هزینه‌های خود را تنظیم می‌کند تا با تغییرات قیمت گاز هماهنگی داشته باشد. به همین دلیل است که، برای مثال، می توانید ببینید که هزینه های zkSync زمانی که قیمت بنزین در شبکه اصلی افزایش می یابد (به طور کلی کاهش می یابد) کمی بالاتر می رود (به ترتیب کمتر). توجه داشته باشید که هزینه‌های انتقال zkSync همیشه برای ETH (و تقریباً 100 برابر برای توکن‌های ERC20) بیش از 20 برابر ارزان‌تر از هزینه‌های موجود در شبکه اصلی باقی می‌ماند.                            &#x20;
 
-Currently, the service operates as close as possible to break-even costs and will remain so until the system becomes
-decentralized. To safely compensate for the expenses, from time to time zkSync adjusts its fees to keep up with the gas
-price changes. This the reason why, for example, you can see zkSync fees getting slightly higher (respectively lower)
-when the gas prices on the mainnet increase (resp. decrease). Note that zkSync transfer fees always remain over 20 times
-cheaper for ETH (and nearly 100 times cheaper for ERC20 tokens) than the ones on the mainnet.
+## آیا zkSync یک توکن بومی خواهد داشت؟                                                                                                  &#x20;
 
-### Will zkSync have a native token?
+بله                                                                                                                                                          &#x20;
 
-Yes.
+## &#x20;چه زمانی؟ چگونه می توانم توکن را دریافت کنم؟
 
-### When? How can I get the token?
+تلاش ها و تمرکز ما تاکنون برای توسعه zkSync و امنیت آن اختصاص یافته است. هر گونه اطلاعیه از zkSync را می توان در Discord، Telegram و Twitter یافت.                                                                                                   &#x20;
 
-Our efforts and focus have been so far dedicated for the development of zkSync and its security. Any announcements from zkSync can be found on [Discord](https://discord.com/invite/px2aR7w), [Telegram](https://t.me/zksync), and [Twitter](https://twitter.com/zksync).
+## چگونه کار خواهد کرد؟&#x20;
 
-### How will it work?
-
-When zkSync becomes
-[fully decentralized](/userdocs/decentralization.md#how-decentralized-is-zksync), the token will be used for staking in order
-to become a validator in the zkSync network. More details to come.
+هنگامی که zkSync کاملاً غیرمتمرکز شد، توکن برای شرط بندی به منظور تبدیل شدن به یک اعتبارسنجی در شبکه zkSync استفاده می شود. جزئیات بیشتر در راه است.                                                                                   &#x20;

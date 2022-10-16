@@ -1,29 +1,27 @@
-# FAQ
+# سوالات متداول
 
-\[\[toc]]
+## آیا نشانه ای وجود خواهد داشت؟
 
-## Will there be a token?
+بله                                                                                                                                                           &#x20;
 
-Yes
+## توکن کی منتشر میشه؟
 
-## When will the token be released?
+تمرکز این تیم بر روی مقیاس‌پذیری اتریوم است. می‌توانید هر گونه اعلامیه‌ای را از zkSync در Discord، Telegram و Twitter پیدا کنید.                                                                                                                                           &#x20;
 
-The team’s focus is to work on scalability for Ethereum. You can find any announcements from zkSync on [Discord](https://discord.com/invite/px2aR7w), [Telegram](https://t.me/zksync), and [Twitter](https://twitter.com/zksync).
+## چرا هزینه ها اینقدر بالاست؟
 
-## Why are the fees so high?
+کارمزدهای ما به قیمت گاز اتریوم لایه 1 (L1) بستگی دارد زیرا با هر تراکنش zkSync لایه 2 (L2)، داده های مرتبط را در لایه 1 پست می کنیم – این به ما امکان می دهد امنیت اتریوم را به ارث ببریم.                                                 &#x20;
 
-Our fees depend on Ethereum Layer 1 (L1) gas prices because with every zkSync Layer 2 (L2) transaction, we post related data on Layer 1 — this allows us to inherit the security of Ethereum.
+## زمان برداشت چقدر است؟
 
-## How long are withdrawal times?
+در اوج استفاده از zkSync، زمان برداشت حدود 10 دقیقه است. در زمان استفاده کمتر، ممکن است تا 7 ساعت طول بکشد. در حال حاضر، زمان برداشت به فعالیت در zkSync بستگی دارد، زمانی که بلوک ها را نهایی می کنیم و آنها را به L1 ارسال می کنیم.                                                                                                                                    &#x20;
 
-At peak usage of zkSync, the withdrawal time is about 10 minutes. During lower use, it can take up to 7 hours. Currently, withdrawal times depend on the activity on zkSync, when we finalize blocks, and submit them to L1.
+## من وجوه خود را برداشت کردم اما آنها را در حساب L1 خود نمی بینم
 
-## I withdrew my funds but don't see them in my L1 account
+اگر برداشت شما به عنوان "کامل" در zkScan علامت گذاری شده است، اما وجه به کیف پول شما وارد نشده است، در اینجا چند مرحله وجود دارد که باید انجام دهید:                                                                                                     &#x20;
 
-If your withdrawal is marked as "Complete" on [zkScan](https://zkscan.io/), but the funds have not arrived in your wallet, here are a few steps you should take:
-
-1. Make sure that enough time has passed. A withdrawal takes 10 minutes to 7 hours, depending on the usage of the zkSync network.
-2.  Check for your transaction in "Internal Txns" on [Etherscan](https://etherscan.io/).
+1. مطمئن شوید که زمان کافی گذشته است. بسته به استفاده از شبکه zkSync، برداشت 10 دقیقه تا 7 ساعت طول می کشد.                                                                                                                                  &#x20;
+2.  تراکنش خود را در "Txns داخلی" در Etherscan بررسی کنید.
 
     ```
     1. Open Etherscan and go to your address page.
@@ -35,41 +33,43 @@ If your withdrawal is marked as "Complete" on [zkScan](https://zkscan.io/), but 
 \
 
 
-![Internal Txns Etherescan](https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/int-txns.png)
+<figure><img src="../../.gitbook/assets/int-txns (1).png" alt=""><figcaption></figcaption></figure>
 
 \
-\
 
 
-1. If the account balance is not the same as on Etherscan, contact support for your wallet.
-2. Depending on your wallet, you may have to add that token for it to display.
-3. If none of the steps above have helped you, please email us at withdraw@zksync.io describing your problem. It **MUST** contain the following info:
-   1. Your zkSync wallet address.
-   2. The wallet are you using (e.g., Trust).
-   3. The problem(s) you encountered.
+1. اگر موجودی حساب مانند Etherscan نیست، با پشتیبانی کیف پول خود تماس بگیرید.3
+2. بسته به کیف پول خود، ممکن است مجبور شوید آن توکن را اضافه کنید تا نمایش داده شود.
+3. اگر هیچ یک از مراحل بالا به شما کمک نکرده است، لطفاً به ما ایمیل بزنید و مشکل خود را شرح دهید. باید حاوی اطلاعات زیر باشد:withdraw@zksync.io                                                                                                                                 &#x20;
 
-* The more information you provide, the faster we can solve your problem!
 
-## I used "Transfer" instead of "Withdraw" to get my funds onto L1
 
-If you attempted to withdraw your zkSync funds to L1 but used the "Transfer" option instead of "Withdraw," you should try logging in to zkSync with the wallet that received the funds.
+1. آدرس کیف پول zkSync شما.
+2. کیف پول مورد استفاده شما (به عنوان مثال، Trust).
+3. مشکل(هایی) که با آن مواجه شدید.
 
-If you cannot log in to the zkSync wallet, you can use the "Alternative Withdrawal" tool. See the [Alternative Withdrawal](tutorials.md#alternative-withdrawal) section on our [Tutorials](tutorials.md) page.
+* هرچه اطلاعات بیشتری ارائه دهید، سریعتر می توانیم مشکل شما را حل کنیم!
 
-## What is the account activation fee?
+## من از "انتقال" به جای "برداشت" استفاده کردم تا وجوه خود را به L1 برسانم                                                                       &#x20;
 
-The account activation fee is a one-time fee to register your account with zkSync. This fee only applies to your first zkSync transaction.
+اگر سعی کردید وجوه zkSync خود را به L1 برداشت کنید اما از گزینه "انتقال" به جای "برداشت" استفاده کردید، باید سعی کنید با کیف پولی که وجه دریافت کرده است وارد zkSync شوید.L1                                                            &#x20;
 
-On a deeper level, to be better suited for zero-knowledge proofs, zkSync accounts are defined over a different elliptic curve than Ethereum's. Activating your account generates and publishes a new private-public key pair over this curve associated with your Ethereum address.
+اگر نمی‌توانید وارد کیف پول zkSync شوید، می‌توانید از ابزار «برداشت جایگزین» استفاده کنید. بخش برداشت جایگزین را در صفحه آموزش های ما ببینید.                                                                                                          &#x20;
 
-The registration process happens directly on the Ethereum smart contract and therefore it is an L1 transaction, so the activation fee is to pay the Ethereum miners and not zkSync validators.
+## هزینه فعال سازی حساب چقدر است؟
 
-ERC-1271 compatible wallets (like Argent) increase this one-time fee because of higher interaction with the zkSync smart contract. This operation is cheaper if you are using a CREATE2 smart-contract-based wallet.
+هزینه فعال سازی حساب یک بار هزینه برای ثبت حساب خود در zkSync است. این کارمزد فقط برای اولین تراکنش zkSync شما اعمال می شود.                                                                                                                     &#x20;
 
-## What is the difference between an Initiated, Committed, and Verified transaction on zkScan?
+در سطح عمیق‌تر، برای اینکه برای اثبات دانش صفر مناسب‌تر باشند، حساب‌های zkSync بر روی یک منحنی بیضی متفاوت از اتریوم تعریف می‌شوند. فعال کردن حساب شما یک جفت کلید خصوصی-عمومی جدید در این منحنی مرتبط با آدرس اتریوم شما ایجاد و منتشر می کند.                                                                                       &#x20;
 
-**Initiated**: the zkSync server has received and processed the transaction. If the transaction is a transfer, it is ready for immediate use.
+فرآیند ثبت نام مستقیماً در قرارداد هوشمند اتریوم انجام می شود و بنابراین یک تراکنش L1 است، بنابراین هزینه فعال سازی پرداخت به استخراج کنندگان اتریوم است نه اعتبار سنجی zkSync.                                                                 &#x20;
 
-**Committed**: the transaction appears in a block that is _committed_ to the L1 smart contract.
+کیف پول‌های سازگار با ERC-1271 (مانند Argent) به دلیل تعامل بیشتر با قرارداد هوشمند zkSync، این کارمزد یک‌باره را افزایش می‌دهند. اگر از کیف پول مبتنی بر قرارداد هوشمند CREATE2 استفاده می کنید، این عملیات ارزان تر است.                                                                                                                                                          &#x20;
 
-**Verified**: the transaction’s block has been proven and verified on the L1 smart contract.
+## &#x20;تفاوت بین یک تراکنش آغاز شده، متعهد و تأیید شده در zkScan چیست؟                                                            &#x20;
+
+آغاز : سرور zkSync تراکنش را دریافت و پردازش کرده است. اگر معامله انتقالی باشد، برای استفاده فوری آماده است.                                                                                                                                                       &#x20;
+
+تعهد: تراکنش در بلوکی ظاهر می شود که به قرارداد هوشمند L1 متعهد است.                                               &#x20;
+
+تأیید شده: بلوک تراکنش در قرارداد هوشمند L1 اثبات و تأیید شده است.                                                         &#x20;

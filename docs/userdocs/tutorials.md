@@ -1,118 +1,116 @@
-# Tutorials
+# آموزش ها
 
-\[\[toc]]
+## اضافه کردن وجوه به zkSync با MetaMask
 
-## Add Funds to zkSync with MetaMask
+در این آموزش، ما با MetaMask به کیف پول zkSync واریز خواهیم کرد.                                                             &#x20;
 
-In this tutorial, we will be depositing into a zkSync wallet with MetaMask.
+> در حالی که آموزش تصاویر MetaMask را برای Rinkeby نشان می دهد، می توانید همان مراحل را برای mainnet دنبال کنید.                                                                                                                                            &#x20;
 
-> While the tutorial shows the MetaMask images for Rinkeby, you can follow the same steps for mainnet.
-
-**There is an account activation fee applied on the first transaction after depositing. Deposit an additional \~$20 to cover it during high gas fees.** Learn more about the account activation fee in our [FAQ](faq.md#what-is-the-account-activation-fee).\
+برای اولین تراکنش پس از واریز، هزینه فعال سازی حساب اعمال می شود. 20 دلار اضافی برای پوشش دادن آن در هنگام هزینه های بالای گاز واریز کنید. در سؤالات متداول ما درباره هزینه فعال سازی حساب بیشتر بیاموزید.        \
 \
 
 
-To connect your wallet to the zkSync 1.0 Mainnet select the "Ethereum Mainnet" button at the top of MetaMask.\
-\
+برای اتصال کیف پول خود به شبکه اصلی zkSync 1.0 دکمه "Ethereum Mainnet" را در بالای MetaMask انتخاب کنید.                                                                                                                                                  &#x20;
 
+<figure><img src="https://docs.zksync.io/D1.png" alt=""><figcaption></figcaption></figure>
 
-![Deposit](https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/Deposit%201.png)
+&#x20;        &#x20;
 
-\
-\
+1. به https://wallet.zksync.io/ بروید و کیف پول خود را وصل کنید.
 
+* برای اتصال به شبکه اصلی zkSync 1.0:
+  * روی نماد اتریوم در پایین سمت راست کلیک کنید.
+  * Mainnet را انتخاب کنید.
 
-1. Go to [https://wallet.zksync.io/](https://wallet.zksync.io/) and connect your wallet.
-
-* To connect to the zkSync 1.0 Mainnet:
-  * Click on the Ethereum symbol at the bottom right.
-  * Select Mainnet.
+<figure><img src="https://docs.zksync.io/D00.png" alt=""><figcaption></figcaption></figure>
 
 \
 
 
-![D1.png](https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/D1.png)
+<figure><img src="https://docs.zksync.io/mainnet_goerli_selection.png" alt=""><figcaption></figcaption></figure>
 
-\
 \
 
 
 ![Mainnet.png](https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/Mainnet.png)\
 
 
-1. Choose "+ Add Funds."
+1. topup را انتخاب کنید
 
 \
 
 
-![D2.png](https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/D2%20copy.png)
+<figure><img src="https://docs.zksync.io/D2.png" alt=""><figcaption></figcaption></figure>
 
 \
 
 
-> For a FIAT onramp choose one of the options and complete the process on the pop-up to save on L1 gas fees.
+> می‌توانید روش‌های مختلفی را برای افزودن وجه به کیف پول zkSync خود انتخاب کنید، از جمله FIAT onramps، Exchanges، یا Bridges (برای این آموزش از پل zkSync استفاده خواهیم کرد)                                         &#x20;
 
 \
 
 
-![onramp.png](https://raw.githubusercontent.com/matter-labs/zksync-docs/userdoc-update/docs/images/onramp.png)
+<figure><img src="https://docs.zksync.io/Top-up.png" alt=""><figcaption></figcaption></figure>
 
 \
 
 
-1. Select your token, enter the amount, and add funds.
+1. توکن خود را انتخاب کنید، مبلغ را وارد کنید و روی «پر کردن» کلیک کنید
 
-* _If you can’t find your token:_
-  * Some tokens will be referred to by their internal id number on our [Tokens page](https://zkscan.io/explorer/tokens/) instead of their token symbol. (E.g. ERC20-23 = UNI).
-  * Add new token to zkSync:
-    1. Click "Can't find a token?"
-    2. Use the link to access the [Tokens page](https://zkscan.io/explorer/tokens/).
-    3. Click "Add New Token" at the top right corner and follow the directions.
-
-\
-
-
-![D3.png](https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/D3.png)
+* اگر نمی توانید رمز خود را پیدا کنید:
+  * برخی از نشانه ها به جای نماد توکن با شماره شناسه داخلی آنها در صفحه توکن های ما ارجاع داده می شوند. (به عنوان مثال ERC20-23 = UNI).
+  * اضافه کردن توکن جدید به zkSync:
+    1. روی «نمی‌توانید نشانه‌ای را پیدا کنید؟» کلیک کنید.
+    2. برای دسترسی به صفحه Tokens از لینک استفاده کنید.
+    3. روی «Add New Token» در گوشه سمت راست بالا کلیک کنید و دستورالعمل‌ها را دنبال کنید.
 
 \
 
 
-> If you add a token that requires approval, you need to pay a gas fee on L1 to authorize the deposit to zkSync. You will see the following messages before moving on to step 4.\
+<figure><img src="https://docs.zksync.io/D3.png" alt=""><figcaption></figcaption></figure>
+
+\
+
+
+> اگر توکنی را اضافه کنید که نیاز به تأیید دارد، باید برای مجاز کردن سپرده گذاری به zkSync، هزینه گاز اتریوم را پرداخت کنید. قبل از رفتن به مرحله 4، پیام های زیر را مشاهده خواهید کرد                                                   .\
 >
 
-![approval.png](https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/approval.png)
+
 
 \
 
 
-1. Review the transaction information and confirm.\
+<figure><img src="https://docs.zksync.io/ERC20-approval.png" alt=""><figcaption></figcaption></figure>
+
+1. اطلاعات تراکنش را بررسی کرده و تایید کنید.\
 
 
-![D5.png](https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/D5.png)
-
-\
-
-
-1. This is an L1 transaction (as you deposit funds from L1 to L2), and therefore the time for it to appear in a block depends on the fee that you set. Your funds will appear on L2 only after your transaction is processed on L1. If you have any difficulties, please check [Etherscan](https://etherscan.io/) to monitor the transaction.\
-
-
-![D6.png](https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/D6.png)
-
-\
-\
-
-
-![D7.png](https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/D7.png)
+<figure><img src="https://docs.zksync.io/D5.png" alt=""><figcaption></figcaption></figure>
 
 \
 
 
-1. Your deposit is complete. The transaction has been initiated, and your funds will be visible in your zkSync wallet within ten confirmations of your L1 transaction.
+1. این یک تراکنش L1 است (از آنجایی که وجوه را از L1 به L2 واریز می کنید)، و بنابراین زمان نمایش آن در یک بلوک به کارمزدی که تعیین می کنید بستگی دارد.
+2. وجوه شما تنها پس از پردازش تراکنش در L1 در L2 ظاهر می شود (اگر مشکلی دارید، لطفاً Etherscan را بررسی کنید (پنجره جدید باز می شود) تا تراکنش را نظارت کنید)
 
-| **Committed**                                                                                                                                          | **Verified**                                                                                                                                       |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------- |
-| A single yellow check mark next to your balance indicates the zkSync server has processed your transaction and your funds are ready for immediate use. | Two green check marks signal the proof for the block containing your transaction has been produced and submitted to the smart contract on Layer 1. |
-| ![D9.png](https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/D9.png)                                                         | ![D10.png](https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/D10.png)                                                   |
+
+
+<figure><img src="https://docs.zksync.io/D6.png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="https://docs.zksync.io/D7.png" alt=""><figcaption></figcaption></figure>
+
+\
+\
+
+
+\
+
+
+1. سپرده شما تکمیل شده است. تراکنش آغاز شده است، و وجوه شما در کیف پول zkSync شما در ده تاییدیه تراکنش L1 شما قابل مشاهده خواهد بود.                                                                                             &#x20;
+
+| **Committed**                                                                                                                                          | **Verified**                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------- |
+| <p>یک علامت تیک زرد رنگ در کنار موجودی شما نشان می دهد که سرور zkSync تراکنش شما را پردازش کرده است و وجوه شما برای استفاده فوری </p><p>آماده است.</p> | دو علامت تیک سبز نشان می دهد که اثبات بلوک حاوی تراکنش شما تولید شده و به قرارداد هوشمند در لایه 1 ارسال شده است. |
 
 \
 

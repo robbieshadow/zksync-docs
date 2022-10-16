@@ -1,33 +1,24 @@
-# Wallets
+# کیف پول ها
 
-[[toc]]
+## &#x20;  زی کی سینک از چه کیف پول های اتریوم پشتیبانی می کند؟                                                                                 &#x20;
 
-## What Ethereum wallets does zkSync support?
+به طور کلی، می توانید با خیال راحت به هر آدرس اتریوم (حتی به صرافی ها و قراردادهای هوشمند) وجوه ارسال کنید. صاحب این آدرس همیشه می تواند وجوه را مطالبه کند.                                                                       &#x20;
 
-Generally, you can safely send funds to any Ethereum address (even to exchanges and smart contracts). The owner of this
-address will always be able to claim the funds.
+لیست به روز کیف پول های اتریوم که می توانید از کیف پول وب zkSync کنترل کنید را می توانید مستقیماً در صفحه اصلی آن پیدا کنید.                                                                                                                                        &#x20;
 
-The up-to-date list of the Ethereum wallets that you can control from the zkSync web wallet can be found directly on
-[its homepage](https://wallet.zksync.io).
+برای کنترل یک آدرس به صورت برنامه‌ای، تنها چیزی که نیاز دارید این است که بتوانید پیامی را با آن امضا کنید - یا با امضای بومی اتریوم یا از طریق EIP1271 در صورت قراردادهای هوشمند. در راهنمای برنامه نویس بیشتر بیاموزید.&#x20;
 
-To control an address programmatically, all you need to is to be able to sign a message with it — either with native
-Ethereum signature, or via [EIP1271](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-1271.md) in case of smart
-contracts. Learn more in the [developer guide](/dev/).
+## اگر کیف پول من پشتیبانی نشود یا نتواند پیام ها را امضا کند چه؟
 
-## What if my wallet is not supported or can't sign messages?
+صاحبان برخی از آدرس‌های اتریوم به دلایل مختلف نمی‌توانند مستقیماً از zkSync استفاده کنند:                      &#x20;
 
-Owners of some Ethereum addresses cannot use zkSync directly for various reasons:
+* کیف پول هنوز در رابط وب پشتیبانی نمی شود.
+* یک آدرس متعلق به یک صرافی است.
+* یک آدرس متعلق به یک قرارداد هوشمند بدون پشتیبانی EIP1271 (به عنوان مثال Gnosis Safe) است.
 
-- wallet not supported yet in the web interface;
-- an address belongs to an exchange;
-- an address belongs to a smart contract without
-  [EIP1271](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-1271.md) support (e.g. Gnosis Safe).
+در چنین مواردی، همیشه می توانید وجوه را از حساب L2 zkSync به همان آدرس در L1 برداشت کنید. پروتکل این اجازه را می دهد زیرا ثابت امنیتی نقض نمی شود: وجوه هرگز دست مالک را تغییر نمی دهد. این مستلزم آن است که حساب قبلاً هرگز کلید عمومی zkSync را ثبت نکرده باشد.                                                                                  &#x20;
 
-In such cases, you can always withdraw funds from an L2 zkSync account to the same address in L1. The protocol allows
-this because the security invariant is not violated: funds never change the owning hand. It requires that the account
-have never registered a zkSync public key before.
+اگر نیاز به برداشت وجه خود از چنین حسابی دارید، لطفاً از ابزار زیر برای برداشت های جایگزین استفاده کنید. لطفاً توجه داشته باشید که برای اینکه ابزار بتواند وجوه خود را از حساب شما برداشت کند، همه موارد زیر باید درست باشد:
 
-If you need to withdraw your funds from such an account, please use the following [tool for alternative withdrawals](./tutorials.md#alternative-withdrawal). Please note, that for the tool to be able to withdraw funds from your account, all of the following must be true:
-
-- The account is at least 24 hours old.
-- The account has never been unlocked (i.e. nonce is zero).
+* حساب کاربری حداقل 24 ساعته است.
+* حساب هرگز باز نشده است (یعنی nonce صفر است).

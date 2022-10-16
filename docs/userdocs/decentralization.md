@@ -1,44 +1,30 @@
-# Decentralization
+# عدم تمرکز
 
-[[toc]]
+## &#x20;                                            zkSync چقدر غیرمتمرکز است
 
-## How decentralized is zkSync
+از نظر فناوری، تمرکززدایی یک گزینه باینری نیست، بلکه پیوسته ای از انتخاب های طراحی است. مقیاس تقریبی زیر را می توان برای ارزیابی سطح عدم تمرکز یک پروژه رمزنگاری با توجه به مالکیت دارایی ها استفاده کرد:                      &#x20;
 
-Technologically, decentralization is not a binary option but rather a continuum of design choices. The following rough
-scale can be used to asses a level of decentralization of a crypto project with regard to the ownership of assets:
+1. حضانت متمرکز (کاملا قابل اعتماد): کوین بیس
+2. حضانت جمعی (اعتماد به اکثریت صادق): زنجیرهای جانبی
+3. عدم حبس از طریق اثبات تقلب (اعتماد به اقلیت صادق): جمع آوری خوش بینانه
+4. غیر حضانت، مرکزی (بی اعتماد): آرجنت
+5. چند اپراتور (قابل اعتماد\*، سانسور ضعیف-مقاومت): کیهان
+6. همتا به همتا (بی اعتماد\*، مقاومت در برابر سانسور قوی): اتریوم، بیت کوین
 
-1. Centralized custody (fully trusted): Coinbase
-2. Collective custody (trust in the honest majority): sidechains
-3. Non-custodial via fraud proofs (trust in the honest minority): optimistic rollups
-4. Non-custodial, centrally operated (trustless): Argent
-5. Multi-operator (trustless<sup>\*</sup>, weak censorship-resistance): Cosmos
-6. Peer-to-peer (trustless<sup>\*</sup>, strong censorship-resistance): Ethereum, Bitcoin
+در حال حاضر، zkSync در سطح 4 این مقیاس است. این کاملاً غیرقانونی است و با مفروضات اعتماد صفر است: اعتبار سنجی zkSync بدون مجوز صریح قدرت انجام کاری با دارایی های کاربر را ندارد. کاربران همیشه می‌توانند تمام وجوه خود را به شبکه اصلی اتریوم بدون هیچ‌گونه همکاری اعتبار‌دهنده‌ها (حتی اگر شبکه اتریوم کاملاً بسته شده و پاسخگو نباشد) برداشت کنند.                                                                                                                        &#x20;
 
-Right now, **zkSync** is at level 4 of this scale. It is fully non-custodial with zero trust assumptions: the **zkSync**
-validator has no power to do anything with user's assets without explicit authorization. Users can always withdraw all
-of their funds to Ethereum mainnet without any cooperation from validators (even if the latter is completely shut down
-and unresponsive).
+با این حال، در حال حاضر، عملکرد روزانه شبکه zkSync به سلامت ارائه‌دهنده خدمات محاسباتی بستگی دارد که اثبات‌های دانش صفر را برای بلوک‌ها ایجاد می‌کند.                                                                                    &#x20;
 
-However, at the moment, the daily operation of the **zkSync** network depends on the health of the computational service
-provider who generates zero-knowledge proofs for the blocks.
 
-<span class="footnote"><sup>\*</sup> For L1 networks, trustlessness is only guaranteed by the ability (and to the extent
-of that ability) of honest minority users to fork away from the network taken over by dishonest majority. For L2
-protocols, this is not necessary, because users can ultimately rely on L1 to circumvent exit censorship.</span>
 
-## Who operates zkSync now
+1. برای شبکه‌های L1، بی‌اعتمادی فقط با توانایی (و به میزان آن توانایی) کاربران اقلیت صادق برای دور شدن از شبکه‌ای که اکثریت نادرست آن را تحت سلطه خود درآورده‌اند تضمین می‌شود. برای پروتکل های L2، این ضروری نیست، زیرا کاربران در نهایت می توانند برای دور زدن سانسور خروج به L1 تکیه کنند.                                   &#x20;
 
-Currently, the computational service provider for the **zkSync** network is "Stichting ZK Sync", a non-profit Dutch
-foundation registered under RSIN 861038204 in Kingsfordweg 151, 1043GR Amsterdam. The service operates close to
-break-even costs. For the business model, see [here](/userdocs/tokenomics.md).
+## چه کسی اکنون zkSync را اجرا می کند
 
-## Decentralization roadmap
+در حال حاضر، ارائه‌دهنده خدمات محاسباتی برای شبکه zkSync "Stichting ZK Sync" است، یک بنیاد غیرانتفاعی هلندی که تحت RSIN 861038204 در Kingsfordweg 151, 1043GR Amsterdam ثبت شده است. این سرویس نزدیک به هزینه های سربه سر عمل می کند. برای مدل کسب و کار، اینجا را ببینید.                                             &#x20;
 
-Matter Labs is committed to developing **zkSync** into a fully decentralized protocol.
+## نقشه راه تمرکززدایی
 
-We outlined the decentralization roadmap in the
-[zkSync vision](https://medium.com/matter-labs/introducing-zk-sync-the-missing-link-to-mass-adoption-of-ethereum-14c9cea83f58)
-document. We intend to achieve it by introducing an independent consensus mechanism for block construction with two
-different roles: Validators and Guardians. (Note, that the security of **zkSync** will not be affected by introducing an
-additional consensus mechanism, since the final verification of state transition proofs still will be performed by a
-smart contract on the Ethereum mainnet.)
+شرکت Matter Labs متعهد به توسعه zkSync به یک پروتکل کاملاً غیرمتمرکز است.                                           &#x20;
+
+ما نقشه راه تمرکززدایی را در سند چشم انداز zkSync تشریح کردیم. ما قصد داریم با معرفی یک مکانیسم اجماع مستقل برای ساخت بلوک با دو نقش متفاوت به آن دست یابیم: اعتبار سنجی و نگهبان. (توجه داشته باشید که امنیت zkSync با معرفی یک مکانیسم اجماع اضافی تحت تأثیر قرار نخواهد گرفت، زیرا تأیید نهایی اثبات انتقال حالت همچنان توسط یک قرارداد هوشمند در شبکه اصلی اتریوم انجام می شود.)                                                      &#x20;

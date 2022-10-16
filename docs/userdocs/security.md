@@ -1,60 +1,43 @@
-# Security
+# امنیت
 
-[[toc]]
+## مروری بر امنیت
 
-## Security overview
+طراحی پروتکل zkSync به صراحت مفروضات رمزنگاری و ویژگی های امنیتی پروتکل را فهرست می کند.                 &#x20;
 
-[zkSync protocol design](https://github.com/matter-labs/zksync/blob/f59e154865374bdc0f5ded2e2604dac599cb75ee/docs/protocol.md) explicitly lists the
-protocol's cryptographic assumptions and security properties.
+به طور خلاصه، ادعای پروتکل این است که با توجه به اجرای صحیح و اعتبار مفروضات رمزنگاری، وجوهی که در zkSync قرار می‌گیرند همان ضمانت‌های امنیتی را خواهند داشت که گویی در یک حساب اتریوم بدون هیچ الزام اضافی از جانب کاربر نگهداری می‌شوند. به خصوص:                                                                                   &#x20;
 
-In a nutshell, the protocol's claim is that, given correct implementation and validity of cryptographic assumptions,
-funds placed into zkSync will have the same security guarantees as if they are held in an Ethereum account without any
-additional requirements on the user part. In particular:
+* کاربران نیازی به نظارت بر شبکه ندارند.
+* کلیدهای خصوصی را می توان در سردخانه نگهداری کرد.
+* اعتباردهنده ها به هیچ وجه نمی توانند وجوه را بدزدند یا وضعیت zkSync را خراب کنند.
+* کاربران می‌توانند دارایی‌های خود را بدون توجه به همکاری اعتباردهنده‌های zkSync از شبکه اصلی خارج کنند.
 
-- Users do not need to monitor the network.
-- Private keys can be held in cold storage.
-- Validators can not steal funds or corrupt the zkSync state in any way.
-- Users can withdraw their assets onto the mainnet, regardless of cooperation from zkSync validators.
+مکانیسم های مختلفی برای تحقق این تضمین ها استفاده می شود که در زیر مورد بحث قرار می گیرد.                 &#x20;
 
-Several mechanisms are used to fulfill these guarantees, discussed below.
+## اثبات اعتبار
 
-### Validity proofs
+زی کی سینک بر اساس معماری zkRollup ساخته شده است. این بدان معناست که هر تراکنش با یک قرارداد هوشمند در شبکه اصلی اتریوم و با تأیید صحت بلاک تأیید می شود. بنابراین، هیچ اعتبارسنجی هرگز نمی تواند سیستم را به حالت نادرست منتقل کند یا سرمایه کاربران را بگیرد.                                                                                           &#x20;
 
-zkSync is built on [zkRollup architecture](/userdocs/tech#zk-rollup-architecture). This means, every single transaction is
-verified by a smart contract on the Ethereum mainnet by means of verifying the proof of the validity of the block. Thus,
-no validator can ever move the system into an incorrect state or take users' funds.
+برای مرور کلی بیشتر مزایای اثبات اعتبار، این مقاله را ببینید.                                                                                  &#x20;
 
-See [this article](https://medium.com/starkware/validity-proofs-vs-fraud-proofs-4ef8b4d3d87a) for a further overview of
-the benefits of validity proofs.
+## صف اولویت دار
 
-### Priority queue
+در شرایط اضطراری نهایی که تمام اعتبارسنجی‌ها خاموش می‌شوند یا پاسخگو نیستند، مکانیسم خروج اضطراری تضمین می‌کند که کاربران کنترل دارایی‌های خود را حفظ خواهند کرد. به صورت زیر عمل می کند.                            &#x20;
 
-In the ultimate emergency case of all validators being shut down or becoming unresponsive, the emergency exit mechanism
-ensures that users will keep control of their assets. It works as follows.
+1. اگر تراکنش‌های یک کاربر به هر دلیلی توسط اعتبارسنجی‌ها نادیده گرفته شود، درخواست خروج می‌تواند مستقیماً در شبکه اصلی در صف اولویت ارسال شود.                                                                                               &#x20;
+2. اعتبار رسان ها موظفند درخواست های صف اولویت را در یک بازه زمانی کوتاه (\~1 هفته) پردازش کنند.             &#x20;
+3. در صورتی که اعتبار سنجی ها نتوانند درخواست ها را پردازش کنند، سیستم وارد حالت exodus می شود و هر کاربر می تواند بلافاصله با انجام یک تراکنش مستقیم در شبکه اصلی اتریوم، از تمام دارایی های خود خارج شود.&#x20;
 
-1. If transactions of a user are being ignored, for any reason, by the validators, an exit request can be submitted
-   directly on mainnet into the **priority queue**.
-2. Validators are obliged to process priority queue requests within a short time window (~1 week).
-3. In case the validators fail to process the requests, the system enters **exodus mode** and every user can immediately
-   exit all of their assets by making a direct transaction on the Ethereum mainnet.
+## مکانیزم ارتقا
 
-### Upgrade mechanism
+نسخه 1.0 پروتکل zkSync با مکانیزم ارتقاء قرارداد به منظور تسهیل تکرارهای طراحی سریعتر ارائه می شود. با این حال، کاربران یک حق اساسی برای انصراف از ارتقاء آینده دارند. یک ارتقای جدید باید از طریق قرارداد zkSync اعلام شود و همه کاربران یک دوره زمانی 4 هفته‌ای برای خروج دریافت می‌کنند، در صورتی که تغییرات را دوست ندارند.
 
-Version 1.0 of zkSync protocol comes with a contract upgrade mechanism in order to facilitate faster design iterations.
-However, users have a fundamental right to opt-out of a future upgrade. A new upgrade must be announced via the zkSync
-contract and all users get a 4-week timelock period to exit where in case they don't like the changes.
+برای ایجاد تعادل بین امنیت و قابلیت ارتقا، شورای امنیت، گروهی متشکل از 15 عضو از جامعه اتریوم، می‌تواند قفل زمانی 4 هفته‌ای را کوتاه کند. هنگامی که Matter Labs ارتقاء را آغاز می کند، امضای 9/15 از اعضای شورای امنیت می تواند ارتقا را فوری کند. در این مرحله از zkSync، ما بر این باوریم که احتمال باگ ها به طور قابل توجهی بیشتر از تبانی مخرب بین تیم Matter Labs و 9/15 اعضای شورای امنیت است که همگی از اعضای شناخته شده جامعه اتریوم هستند. می‌توانید درباره تصمیم برای کوتاه کردن دوره قفل زمانی در مقاله شورای امنیت 2.0 ما بیشتر بخوانید.&#x20;
 
-To strike a balance between security and upgradeability, the security council, a group of [15 members](https://miro.medium.com/max/1400/1*3O6eotp6AMWS3WADhS00Yg.png) of the Ethereum community, can shorten the 4-week timelock. When Matter Labs initiates an upgrade, 9/15 signatures from the security council members can make the upgrade instant. 
-At this stage of zkSync, we believe that the probability of bugs is significantly higher than a malicious collusion between the Matter Labs team and 9/15 members of the security council, who are all well-known members of the Ethereum community. You can read more about the decision to shorten the timelock period in our [Security Council 2.0 article](https://blog.matter-labs.io/security-council-2-0-2337a555f17a).
+توجه: هنگامی که فناوری بالغ و پایدار شد، به یک مکانیسم انتخاب دقیق با نسخه‌های غیرقابل تغییر انتقال می‌دهیم و همچنین یک عملکرد مهاجرت انبوه را ارائه می‌کنیم.                                                                                           &#x20;
 
-NOTICE: Once the technology is mature and stable, we will transition to a strict opt-in mechanism with immutable versions, and also provide a mass migration functionality.
+## رمزنگاری استفاده شده
 
-## Cryptography used
-
-Although zkSync is built on some of the most cutting-edge cryptography (such as PLONK and RedShift), we were very
-conservative with respect to security choices made in the protocol. Every component relies exclusively on
-well-established cryptographic assumptions widely considered valid in the academic and professional security
-communities.
+اگرچه zkSync بر روی برخی از پیشرفته‌ترین رمزنگاری‌ها (مانند PLONK و RedShift) ساخته شده است، اما ما نسبت به انتخاب‌های امنیتی انجام‌شده در پروتکل بسیار محافظه‌کار بودیم. هر مؤلفه منحصراً بر مفروضات رمزنگاری تثبیت شده متکی است که به طور گسترده در جوامع امنیتی دانشگاهی و حرفه ای معتبر هستند.                                   &#x20;
 
 ### Primitives
 
@@ -68,70 +51,37 @@ communities.
 
 ### Cryptographic assumptions
 
-1. [Collision-resistance](https://en.wikipedia.org/wiki/Collision_resistance)
+1. [Collision-resistance](https://en.wikipedia.org/wiki/Collision\_resistance)
 2. [Pseudo-randomness](https://en.wikipedia.org/wiki/Pseudorandomness)
-3. [Discrete logarithm problem, on elliptic curves and finite fields](https://en.wikipedia.org/wiki/Discrete_logarithm#Cryptography)
+3. [Discrete logarithm problem, on elliptic curves and finite fields](https://en.wikipedia.org/wiki/Discrete\_logarithm#Cryptography)
 
-## Universal CRS setup
+## راه اندازی CRS جهانی
 
-Version 1.0 of zkSync protocol uses the PLONK proof system, which requires a "trusted setup" of a Common Reference
-String (CRS). In PLONK, this setup can be done once and be reused by any number of applications (this is called
-Universal CRS). If at least one participant deletes the entropy (randomness) used to provide their contribution, the
-setup is secure. Having universal, and not application-specific, setup significantly reduces trust assumptions, because
-larger number of prominent and respected members of the community have the incentive to participate in it, and more
-scrutiny can be expected around the trusted setup ceremony.
+نسخه 1.0 پروتکل zkSync از سیستم اثبات PLONK استفاده می کند که به "تنظیم قابل اعتماد" یک رشته مرجع مشترک (CRS) نیاز دارد. در PLONK، این راه‌اندازی را می‌توان یک بار انجام داد و توسط هر تعداد برنامه مجدداً استفاده شد (به آن Universal CRS می‌گویند). اگر حداقل یک شرکت کننده آنتروپی (تصادفی) مورد استفاده برای ارائه مشارکت خود را حذف کند، تنظیم امن است. داشتن راه‌اندازی جهانی، و نه ویژه برنامه، مفروضات اعتماد را به‌طور قابل‌توجهی کاهش می‌دهد، زیرا تعداد بیشتری از اعضای برجسته و محترم جامعه انگیزه شرکت در آن را دارند، و می‌توان انتظار داشت که در مراسم راه‌اندازی مورد اعتماد، بررسی دقیق‌تری انجام شود.                                       &#x20;
 
-Another big advantage of a universal CRS is that updates and bugfixes do not require their own trusted setup ceremonies
-(which are very difficult from the logistical and security perspectives).
+یکی دیگر از مزیت های بزرگ CRS جهانی این است که به روز رسانی ها و رفع اشکالات به تشریفات راه اندازی مورد اعتماد خود نیاز ندارند (که از منظر لجستیکی و امنیتی بسیار دشوار است).                                                        &#x20;
 
-Matter Labs
-participated
-in the global Ignition trusted setup ceremony for PLONK on BN256 elliptic curve, coordinated by AZTEC protocol:
+شرکت Matter labsدر مراسم راه‌اندازی قابل اعتماد Ignition برای PLONK در منحنی بیضوی BN256، که توسط پروتکل AZTEC هماهنگ شده بود، شرکت کرد:                                                                                                &#x20;
 
-<table>
-<tr>
-    <td>Participation address</td>
-    <td>0x04a23ba68e4469061cd461e8b847e820d4ced948</td>
-</tr>
-<tr>
-    <td>Transcript hash</td>
-    <td>0x1f6647d91a9e667173640b67b654cabc81ceee98d6100f259788afb34a3fc529</td>
-</tr>
-<tr>
-    <td>Signature</td>
-    <td>0x3f4ff7b9a6668c23c9ba45d73d1d9d0902b881191d97b307969b63f52296f2326d437ea04dd67a2ebe57a691025d7d31bb0dae88e8023a0d9b15ad599c3eb9351b</td>
-</tr>
+| Participation address | 0x04a23ba68e4469061cd461e8b847e820d4ced948                                                                                           |
+| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
+| Transcript hash       | 0x1f6647d91a9e667173640b67b654cabc81ceee98d6100f259788afb34a3fc529                                                                   |
+| Signature             | 0x3f4ff7b9a6668c23c9ba45d73d1d9d0902b881191d97b307969b63f52296f2326d437ea04dd67a2ebe57a691025d7d31bb0dae88e8023a0d9b15ad599c3eb9351b |
 
-</table>
+این مراسم از اکتبر 2019 تا دسامبر 2019 برگزار شد و 176 شرکت کننده از بیش از 30 کشور برای محاسبه یک پایگاه داده امن از نقاط رمزگذاری شده، از جمله Vitalik Buterin و دیگر اعضای برجسته جامعه رمزنگاری، همکاری کردند. متن کامل مراسم با لیست افراد و سازمان هایی که ادعای مشارکت خود را داشته اند در اینجا موجود است. می توانید از این اسکریپت برای تأیید مشارکت شرکت کنندگان لیست شده استفاده کنید.                                                      &#x20;
 
-The ceremony ran from October 2019 until December 2019, with 176 participants from over 30 countries collaborating to
-compute a secure database of encrypted points, including
-[Vitalik Buterin](https://twitter.com/VitalikButerin/status/1225856246307311616) and other prominent members of the
-crypto community. Full ceremony transcript with the list of individuals and organizations who claimed their contribution
-[is available here](https://ignition.aztecprotocol.com/). You can use
-[this script](https://github.com/matter-labs/ignition-verification) to verify the contributions of the listed
-participants.
+علیرغم تکیه بر یک راه‌اندازی قابل اعتماد جهانی، ما استدلال می‌کنیم که zkSync را می‌توان یک پروتکل کاملاً غیرقابل اعتماد نامید. دلیل این امر این است که هیچ سیستمی بدون نوعی تنظیم قابل اعتماد وجود ندارد. اکثر کاربران شخصاً کد منبع کیف پول‌ها، گره‌های کامل، نرم‌افزار استخراج خود را تأیید و کامپایل نمی‌کنند و مطمئناً مدارهای سخت‌افزاری که همه این موارد بر روی آنها اجرا می‌شود را تأیید نمی‌کنند. به نظر ما، سهولت تبانی پنهان توسعه دهندگان و کارشناسان در این سیستم ها بسیار بیشتر از یک راه اندازی قابل اعتماد با صدها شرکت کننده شناخته شده است. در عین حال، عملیات جاری zkSync نیاز به اعتماد صفر از طرف هیچ طرفی ندارد، که در بین تمام راه حل های مقیاس بندی L2 منحصر به فرد است.                                                                                                                        &#x20;
 
-Despite relying on a universal trusted setup, we argue that zkSync can be called a fully trustless protocol. The reason
-for this is that there are no systems without some form of a trusted setup. Most users do not personally verify and
-compile the source code of their wallets, full nodes, mining software, and certainly do not verify the circuits of the
-hardware all these things run upon. In our opinion, the ease of concealed collusion of developers and experts in these
-systems is much higher than in a trusted setup with hundreds of well-known participants. At the same time, the ongoing
-operation of zkSync requires zero trust from any party whatsoever, which is unique among all L2 scaling solutions.
+با این وجود، ما شما را تشویق می‌کنیم که فهرست مشارکت‌کنندگان مراسم احتراق را بررسی کنید و نظر خود را در مورد وجود حداقل یک فرد یا سازمان قابل اعتماد در میان آنها اعلام کنید. در آینده، ما در تلاش برای حذف مفروضات اعتماد به طور کلی با در آغوش گرفتن یک سیستم شفاف اثبات دانش صفر مانند RedShift (توسعه یافته توسط Matter Labs) هستیم.                                                                                                                                                &#x20;
 
-Nonetheless, we encourage you to check the list of the contributors of the Ignition ceremony and make your own opinion
-on whether there is at least one trustworthy person or organization among them. In the future, we strive to eliminate
-trust assumptions altogether by embracing a transparent zero-knowledge proof system such as
-[RedShift](https://eprint.iacr.org/2019/1400) (developed by Matter Labs).
+## ممیزی های امنیتی
 
-## Security audits
+[ممیزی های امنیتی](https://docs.zksync.io/updates/security-audits/) قبل از هر به روز رسانی اصلی انجام می شود.                                                                       &#x20;
 
-[Security audits](/updates/security-audits) are being conducted before each major update.
+## برنامه باگ بونتی
 
-## Bug Bounty Program
+علاوه بر ممیزی های امنیتی، ما برنامه پاداش اشکال را ارائه می دهیم. در [اینجا ](https://docs.zksync.io/dev/security/bug-bounty/)شما میتوانید اطلاعات بیشتری راجع به آن بخوانید.                                                                                                                                                    &#x20;
 
-Besides security audits, we offer bug bounty program. You can read more about it [here](/dev/security/bug-bounty).
+## هک نت مشوق
 
-### Incentivized HackNet
-
-Each month before an upgrade goes into production, we will deploy an incentivized hacknet, a separate mainnet instance of zkSync, with the upgrade applied. This deployment will not contain user funds but instead real funds provided by Matter Labs for anyone to exploit to receive the critical vulnerability bounty without our intervention. Read more in our article about [upgradability](https://blog.matter-labs.io/upgradability3-934db4433b0c).
+هر ماه قبل از اینکه یک ارتقا به تولید برسد، یک هک نت انگیزشی، یک نمونه شبکه اصلی مجزا از zkSync، با اعمال ارتقاء، مستقر خواهیم کرد. این استقرار شامل وجوه کاربر نخواهد بود، بلکه دارای وجوه واقعی است که توسط Matter Labs برای هرکسی برای دریافت جایزه آسیب‌پذیری حیاتی بدون مداخله ما استفاده می‌شود. در مقاله ما در مورد قابلیت ارتقا بیشتر بخوانید.                                                                                                                                 &#x20;

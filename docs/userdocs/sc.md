@@ -1,3 +1,3 @@
-# Smart contracts
+# قراردادهای هوشمند
 
-zkSync is on track to introduce high-efficient, secure, Turing-complete, multi-language smart contracts in Zinc and Solidity. You will find the up-to-date details on it in the [developer docs](broken-reference).
+زی کی سینک در مسیر معرفی قراردادهای هوشمند با کارایی بالا، ایمن، تورینگ کامل و چند زبانه در Zinc و Solidity است. جزئیات به روز آن را در اسناد توسعه دهنده خواهید یافت.                                                                          &#x20;
