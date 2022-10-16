@@ -183,118 +183,112 @@
 \
 
 
-1. Signing this message submits the transaction to the zkSync network. (remember, it is good practice to read the messages you sign).\
+1. آدرسی را برای ارسال وجه وارد کنید، رمز انتقال را انتخاب کنید و مبلغ را وارد کنید
+2. قبل از انجام معامله، می توانید رمز کارمزد را تغییر دهید. کاربران می‌توانند کارمزد تراکنش‌ها را در تمام توکن‌های محبوب بپردازند، زیرا zkSync از «متا تراکنش‌های بدون گاز» پشتیبانی می‌کند.
+
+<figure><img src="https://docs.zksync.io/S8.1.png" alt=""><figcaption></figcaption></figure>
+
+با امضای این پیام، تراکنش به شبکه zkSync ارسال می شود (به یاد داشته باشید، خواندن پیام هایی که امضا می کنید تمرین خوبی است)\
 
 
-![S7.png](https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/S7.png)
-
-\
-
-
-1. The transfer should take no longer than a couple of seconds. If you have any difficulties, please check [zkScan](https://zkscan.io/) to monitor the transaction.\
-
-
-![S9.png](https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/S9.png)
+<figure><img src="https://docs.zksync.io/S7.png" alt=""><figcaption></figcaption></figure>
 
 \
 
 
-1. Your transfer is complete! The transaction has been initiated and the funds are ready for immediate use.
+1. انتقال نباید بیش از چند ثانیه طول بکشد (اگر مشکلی دارید، لطفاً zkScan را بررسی کنید (پنجره جدید باز می شود) تا تراکنش را نظارت کنید)
 
-| **Committed**                                                                                                                                          | **Verified**                                                                                                                                       |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------- |
-| A single yellow check mark next to your balance indicates the zkSync server has processed your transaction and your funds are ready for immediate use. | Two green check marks signal the proof for the block containing your transaction has been produced and submitted to the smart contract on Layer 1. |
-| ![S10.png](https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/S10.png)                                                       | ![S11.png](https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/S11.png)                                                   |
-
-\
+<figure><img src="https://docs.zksync.io/S9.png" alt=""><figcaption></figcaption></figure>
 
 
-## Send Funds to Ethereum
 
-This tutorial will cover the process of withdrawing funds from zkSync back to the Ethereum main chain.\
+1. انتقال شما کامل شد! معامله آغاز شده است و وجوه برای استفاده فوری آماده است
 
-
-**Moving funds to an exchange**: If you want to move your funds from zkSync to an exchange, these steps follow the **correct method**. _Alternatively, you can take a risk and enter the exchange address when you withdraw, but most exchanges do not observe smart contract transfers, which may require you to contact their customer support to see your funds on the exchange._
-
-1. Go to "Send."\
-
-
-![se1.png](https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/se1.png)
+| **Committed**                                                                                                                            | **Verified**                                                                                                      |
+| ---------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
+| یک علامت تیک زرد رنگ در کنار موجودی شما نشان می دهد که سرور zkSync تراکنش شما را پردازش کرده است و وجوه شما برای استفاده فوری آماده است. | دو علامت تیک سبز نشان می دهد که اثبات بلوک حاوی تراکنش شما تولید شده و به قرارداد هوشمند در لایه 1 ارسال شده است. |
 
 \
 
 
-1. Click on "Send to Ethereum (L1)."\
+## انتقال وجه به اتریوم
+
+این آموزش روند برداشت وجه از zkSync به زنجیره اصلی اتریوم را پوشش می دهد.                                              \
 
 
-![se2.png](https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/se2.png)
+انتقال وجوه به صرافی: اگر می خواهید وجوه خود را از zkSync به صرافی منتقل کنید، این مراحل روش صحیح را دنبال می کنند. از طرف دیگر، می‌توانید ریسک کنید و هنگام برداشت، آدرس صرافی را وارد کنید، اما اکثر صرافی‌ها نقل و انتقالات قرارداد هوشمند را رعایت نمی‌کنند، که ممکن است از شما بخواهد با پشتیبانی مشتری آنها تماس بگیرید تا وجوه خود را در صرافی ببینید.                                                                                                     &#x20;
 
-\
-
-
-1. Your address will auto-populate with your address.\
-   **If you enter a different address for withdrawal, please check that it accepts smart contract transfers.**\
+1. روی "انتقال" کلیک کنید\
 
 
-![se.png](https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/se.png)
+<figure><img src="https://docs.zksync.io/se1.png" alt=""><figcaption></figcaption></figure>
 
 \
 
 
-> **If this is your first transaction after depositing or funding your zkSync account, see the** [**Account Activation**](tutorials.md#account-activation) **section.**
-
-> **If you refreshed the page or recently connected your wallet to zkSync, you will be asked to "Authorize to Send to Ethereum."**
->
-> * Signing the message will generate your zkSync Layer 2 (L2) private key (remember, it is good practice to read the messages you sign).\
->
-
-1. Select the token to send to Ethereum and enter the amount.
-
-* _Before transacting, you can change the fee token._\
-  Users can pay transaction fees in all popular tokens since zkSync supports "gasless meta-transactions."\
+1. روی "انتقال به اتریوم" کلیک کنید\
 
 
-![se4.png](https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/se4.png)
+<figure><img src="https://docs.zksync.io/SE1-2.png" alt=""><figcaption></figcaption></figure>
 
 \
 
 
-> **Read the popup carefully to to prevent loss of funds.** >\
+1. آدرس شما به طور خودکار با آدرس شما پر می شود اگر آدرس دیگری را برای برداشت وارد می‌کنید، لطفاً بررسی کنید که انتقال قرارداد هوشمند را می‌پذیرد                                                                                                &#x20;
+
+<figure><img src="https://docs.zksync.io/se.png" alt=""><figcaption></figcaption></figure>
+
+
+
+\
+
+
+> اگر این اولین تراکنش شما پس از واریز یا تامین مالی حساب zkSync است، به بخش فعال سازی حساب مراجعه کنید.                                                                                                                                              &#x20;
+
+> اگر صفحه را بازخوانی کرده اید یا اخیرا کیف پول خود را به zkSync متصل کرده اید، از شما خواسته می شود "مجوز ارسال در zkSync" را انتخاب کنید.                                                                                                \
+> \
 >
 
-![se4.png](https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/se4.png)
+<figure><img src="https://docs.zksync.io/authorize-to-send-zksync.png" alt=""><figcaption></figcaption></figure>
 
-1. Confirm the withdrawal amount, address, fee, and sign the message (remember, it is good practice to read the messages you sign).\
+توکن ارسالی به اتریوم را انتخاب کرده و مبلغ را وارد کنید
 
+قبل از انجام معامله، می توانید رمز کارمزد را تغییر دهید کاربران می‌توانند کارمزد تراکنش‌ها را در تمام توکن‌های محبوب بپردازند، زیرا zkSync از «متا تراکنش‌های بدون گاز» پشتیبانی می‌کند.                                          &#x20;
 
-![se6.png](https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/se6.png)\
+<figure><img src="https://docs.zksync.io/se4.png" alt=""><figcaption><p><br></p></figcaption></figure>
 
+برای جلوگیری از هدر رفتن وجوه، پنجره بازشو را با دقت بخوانید                                                                           &#x20;
 
-1. Your withdrawal has been initiated. There will be an immediate change in your account balance in zkSync, but **withdrawal times can take from 10 minutes to 7 hours before being available on L1.**
+<figure><img src="https://docs.zksync.io/SE-Popup.png" alt=""><figcaption></figcaption></figure>
 
-* _When network activity increases, blocks fill up faster, and withdrawal times decrease._
+مبلغ برداشت، آدرس، هزینه، و پیام را امضا کنید (به یاد داشته باشید، خواندن پیام هایی که امضا می کنید تمرین خوبی است)                                                                                                                                             &#x20;
 
-| **Committed**                                                                                                                                          | **Verified**                                                                                                                                       |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------- |
-| A single yellow check mark next to your balance indicates the zkSync server has processed your transaction and your funds are ready for immediate use. | Two green check marks signal the proof for the block containing your transaction has been produced and submitted to the smart contract on Layer 1. |
-| ![se8.png](https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/se8.png)                                                       | ![se9.png](https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/se9.png)                                                   |
+<figure><img src="https://docs.zksync.io/se6.png" alt=""><figcaption></figcaption></figure>
+
+1. برداشت شما آغاز شده است. تغییری فوری در موجودی حساب شما در zkSync ایجاد خواهد شد، اما زمان برداشت ممکن است از 10 دقیقه تا 7 ساعت طول بکشد تا در L1 در دسترس باشد.                               &#x20;
+
+* وقتی فعالیت شبکه افزایش می‌یابد، بلوک‌ها سریع‌تر پر می‌شوند و زمان برداشت کاهش می‌یابد            &#x20;
+
+| **Committed**                                                                                                                                                                                  | **Verified**                                                                                                                                        |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| یک علامت تیک زرد رنگ در کنار موجودی شما نشان می دهد که سرور zkSync تراکنش شما را پردازش کرده است و وجوه شما برای استفاده فوری آماده است.                                                       | دو علامت تیک سبز نشان می دهد که اثبات بلوک حاوی تراکنش شما تولید شده و به قرارداد هوشمند در لایه 1 ارسال شده است.                                   |
 
 \
 
 
-## Mint an NFT
+## ضرب یک NFT
 
-The following steps will cover using IPFS desktop to mint an NFT.
+مراحل زیر استفاده از دسکتاپ IPFS برای برش NFT را پوشش می دهد.                                                              &#x20;
 
-> If you are new to minting an NFT, consider using one of the community-created frontends\* like [zkNFT](https://zknft.xyz/#/) or [Open Sky](https://open-sky.vercel.app/).\
+> اگر در ساخت NFT تازه کار هستید، از یکی از فرانتاندهای ایجاد شده توسط انجمن\* مانند Open Sky استفاده کنید (پنجره جدید باز می شود).                                                                                                                           \
 >
 
-_\*The community-created frontends are not created by the zkSync team, and any issues with minting will need to be sent to the creators of these frontends._
+فرانت‌اندهای ایجاد شده توسط انجمن توسط تیم zkSync ایجاد نمی‌شوند و هر مشکلی در مورد Minting باید برای سازندگان این فرانت‌اندها ارسال شود.                                                                                                            &#x20;
 
-1. Visit the [IPFS.io](https://ipfs.io/) and install IPFS Desktop.\
+1. از IPFS.io بازدید کنید (پنجره جدید باز می شود) و IPFS Desktop را نصب کنید\
 
 
-![m1.png](https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/m1.png)
+<figure><img src="https://docs.zksync.io/m1.png" alt=""><figcaption></figcaption></figure>
 
 \
 
