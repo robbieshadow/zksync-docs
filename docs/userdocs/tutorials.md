@@ -115,69 +115,70 @@
 \
 
 
-## Account Activation
+## فعال سازی حساب
 
-Your first transaction after depositing or funding your account requires a separate action for account activation. For more information about account activation, see [Account Activation FAQ](faq.md#what-is-the-account-activation-fee).
+اولین تراکنش شما پس از واریز یا تامین مالی حساب شما نیاز به اقدام جداگانه ای برای فعال سازی حساب دارد. برای اطلاعات بیشتر در مورد فعال سازی حساب، به پرسش های متداول فعال سازی حساب مراجعه کنید.                      &#x20;
 
-1. You will be prompted to "Authorize to Sign account activation" and will need to sign the message first to generate your zkSync L2 private key.\
-
-
-![S2.png](https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/S2.png)
-
-\
+1. از شما خواسته می شود "Authorize to Sign activation account" را انتخاب کنید و ابتدا باید پیام را امضا کنید تا کلید خصوصی zkSync L2 خود را ایجاد کنید.                                                                                             \
 
 
-![S3.png](https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/S3.png)
+<figure><img src="https://docs.zksync.io/S2.png" alt=""><figcaption></figcaption></figure>
 
-1. Then, you will be asked to sign the message for account activation (it is good practice to read the messages you sign).\
-
-
-![S4.png](https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/S4.png)
+<figure><img src="https://docs.zksync.io/S3.png" alt=""><figcaption></figcaption></figure>
 
 \
 
 
-![S5.png](https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/S5.png)
+1. سپس از شما خواسته می شود که پیام را برای فعال سازی حساب امضا کنید (خواندن پیام هایی که امضا می کنید تمرین خوبی است).                                                                                                                                    \
 
-> The account activation fee can be seen below the transaction fee when completing your transaction.
+
+\
+
+
+<figure><img src="https://docs.zksync.io/S4.png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="https://docs.zksync.io/S5.png" alt=""><figcaption></figcaption></figure>
+
+> هنگام تکمیل تراکنش، هزینه فعال سازی حساب را می توانید در زیر کارمزد تراکنش مشاهده کنید
 >
-> * To learn more about the account activation fee check our [Account Activation FAQ](faq.md#what-is-the-account-activation-fee).\
+> * برای کسب اطلاعات بیشتر در مورد هزینه فعال سازی حساب، سؤالات متداول فعال سازی حساب ما را بررسی کنید                                                                                                                                               \
 >   \>\
 >
 
-![Activation fee.png](https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/Activation%20fee.png)
+
+
+<figure><img src="https://docs.zksync.io/Activation-fee.png" alt=""><figcaption></figcaption></figure>
 
 \
 
 
-## Send Funds on zkSync
+## انتقال وجه در zkSync
 
-In this tutorial, we’ll review how to transfer funds to another zkSync account. Whether an Ethereum user has a zkSync account or not, you can send them funds on zkSync to the same address they have on Ethereum.
+در این آموزش، نحوه انتقال وجه به حساب zkSync دیگر را بررسی خواهیم کرد. چه یک کاربر اتریوم دارای حساب zkSync باشد یا خیر، می توانید وجوه خود را در zkSync به همان آدرسی که در اتریوم دارند ارسال کنید.    &#x20;
 
-**Keep in mind these funds will be on Layer 2 (L2), so if you want to use these funds on Layer 1 (L1), you will have to** [**Send to Ethereum**](tutorials.md#Send-funds-to-Ethereum)**.**
+به خاطر داشته باشید که این وجوه در لایه 2 (L2) خواهد بود، بنابراین اگر می خواهید از این وجوه در لایه 1 (L1) استفاده کنید، به اتریوم ارسال می کنید.                                                                                                      &#x20;
 
-1. Go to "Send."\
+1. روی "انتقال" کلیک کنید\
 
 
-![S1.png](https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/S1.png)
+<figure><img src="https://docs.zksync.io/S1.png" alt=""><figcaption></figcaption></figure>
+
+"Transfer to zkSync" را انتخاب کنید
+
+<figure><img src="https://docs.zksync.io/S1-2.png" alt=""><figcaption></figcaption></figure>
 
 \
 
 
-> **If this is your first transaction after depositing or funding your zkSync account, see the** [**Account Activation**](tutorials.md#account-activation) **section.**
+> اگر این اولین تراکنش شما پس از واریز یا تامین مالی حساب zkSync است، به بخش فعال سازی حساب مراجعه کنید.
 
-> **If you refreshed the page or recently connected your wallet to zkSync, you will be asked to "Authorize to Send on zkSync."**
->
-> * Signing the message will re-generate your zkSync Layer 2 (L2) private key (remember, it is good practice to read the messages you sign).\
+> اگر صفحه را بازخوانی کرده اید یا اخیرا کیف پول خود را به zkSync متصل کرده اید، از شما خواسته می شود "مجوز ارسال در zkSync" را انتخاب کنید. \
 >
 
-1. Enter the address to send funds to, select the token to transfer, and enter the amount.
-
-* _Before transacting, you can change the fee token._\
-  Users can pay transaction fees in all popular tokens since zkSync supports "gasless meta-transactions."\
+\
 
 
-![S8.1.png](https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/S8.1.png)
+<figure><img src="https://docs.zksync.io/authorize-to-send-zksync.png" alt=""><figcaption></figcaption></figure>
 
 \
 
