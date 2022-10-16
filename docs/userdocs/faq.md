@@ -1,6 +1,6 @@
 # FAQ
 
-[[toc]]
+\[\[toc]]
 
 ## Will there be a token?
 
@@ -22,39 +22,39 @@ At peak usage of zkSync, the withdrawal time is about 10 minutes. During lower u
 
 If your withdrawal is marked as "Complete" on [zkScan](https://zkscan.io/), but the funds have not arrived in your wallet, here are a few steps you should take:
 
-1.  Make sure that enough time has passed. A withdrawal takes 10 minutes to 7 hours, depending on the usage of the zkSync network.
-
+1. Make sure that enough time has passed. A withdrawal takes 10 minutes to 7 hours, depending on the usage of the zkSync network.
 2.  Check for your transaction in "Internal Txns" on [Etherscan](https://etherscan.io/).
 
-        1. Open Etherscan and go to your address page.
-        2. Go to "Internal Txns."
-        3. You’ll find a list of all transactions from smart contracts.
-        4. The list should have your transaction coming from the zkSync smart contract.
+    ```
+    1. Open Etherscan and go to your address page.
+    2. Go to "Internal Txns."
+    3. You’ll find a list of all transactions from smart contracts.
+    4. The list should have your transaction coming from the zkSync smart contract.
+    ```
 
-<br>
+\
+
 
 ![Internal Txns Etherescan](https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/int-txns.png)
 
-<br>
-<br>
+\
+\
 
-3.  If the account balance is not the same as on Etherscan, contact support for your wallet.
 
-4.  Depending on your wallet, you may have to add that token for it to display.
+1. If the account balance is not the same as on Etherscan, contact support for your wallet.
+2. Depending on your wallet, you may have to add that token for it to display.
+3. If none of the steps above have helped you, please email us at withdraw@zksync.io describing your problem. It **MUST** contain the following info:
+   1. Your zkSync wallet address.
+   2. The wallet are you using (e.g., Trust).
+   3. The problem(s) you encountered.
 
-5.  If none of the steps above have helped you, please email us at withdraw@zksync.io describing your problem. It **MUST** contain the following info:
-
-    1. Your zkSync wallet address.
-    2. The wallet are you using (e.g., Trust).
-    3. The problem(s) you encountered.
-
-- The more information you provide, the faster we can solve your problem!
+* The more information you provide, the faster we can solve your problem!
 
 ## I used "Transfer" instead of "Withdraw" to get my funds onto L1
 
 If you attempted to withdraw your zkSync funds to L1 but used the "Transfer" option instead of "Withdraw," you should try logging in to zkSync with the wallet that received the funds.
 
-If you cannot log in to the zkSync wallet, you can use the "Alternative Withdrawal" tool. See the [Alternative Withdrawal](./tutorials.md#alternative-withdrawal) section on our [Tutorials](./tutorials.md) page.
+If you cannot log in to the zkSync wallet, you can use the "Alternative Withdrawal" tool. See the [Alternative Withdrawal](tutorials.md#alternative-withdrawal) section on our [Tutorials](tutorials.md) page.
 
 ## What is the account activation fee?
 

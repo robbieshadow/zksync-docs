@@ -1,0 +1,17 @@
+# Table of contents
+
+* [User docs](README.md)
+  * [به zkSync خوش آمدید](docs/userdocs/README.md)
+    * [بررسی اجمالی](docs/userdocs/intro.md)
+    * [فن آوری](docs/userdocs/tech.md)
+    * [Security](docs/userdocs/security.md)
+    * [Learn](docs/userdocs/learn.md)
+    * [Wallets](docs/userdocs/wallets.md)
+    * [Tokens & Fees](docs/userdocs/tokens.md)
+    * [Decentralization](docs/userdocs/decentralization.md)
+    * [Tokenomics](docs/userdocs/tokenomics.md)
+    * [Smart contracts](docs/userdocs/sc.md)
+    * [Status page](docs/userdocs/status.md)
+    * [Roadmap](docs/userdocs/roadmap.md)
+    * [FAQ](docs/userdocs/faq.md)
+    * [Tutorials](docs/userdocs/tutorials.md)

@@ -1,30 +1,29 @@
-# Welcome to zkSync
+# به zkSync خوش آمدید
 
-**zkSync** is a user-centric zk rollup platform from [Matter Labs](https://matter-labs.io). It is a scaling solution for
-Ethereum, already live on Ethereum mainnet.
+زی کی سینگ یک پلتفرم zkrollup از [Matter Labs](https://matter-labs.io/) است. این یک راه حل مقیاس پذیر برای اتریوم است که در حال حاضر در شبکه اصلی اتریوم وجود دارد.                                                                                                                &#x20;
 
-<!-- using HTML style instead of Markdown ## since our formatter screams when a title is punctuated -->
 
-<b>Some of the main features of zkSync are:</b>
 
-- Extremely low transaction fees
-- Trustless protocol
-- Funds are cryptographically secure, as in the Ethereum mainnet
-- Users are always in control of their funds
-- No requirement for operational activity to keep the funds safe
+برخی از ویژگی های اصلی zkSync عبارتند از:                                                                                                       &#x20;
 
-<b>Get started by reading [the overview](/userdocs/intro.md).</b>
+* کارمزد تراکنش بسیار پایین                                                                                                                           &#x20;
+* پروتکل بی اعتماد                                                                                                                                              &#x20;
+* وجوه از نظر رمزنگاری امن هستند، مانند شبکه اصلی اتریوم                                                                              &#x20;
+* کاربران همیشه کنترل سرمایه خود را دارند                                                                                                           &#x20;
+* بدون نیاز به فعالیت عملیاتی برای ایمن نگه داشتن وجوه                                                                                  &#x20;
 
-<!-- markdownlint-disable MD001 -->
+با خواندن [نمای کلی ](https://docs.zksync.io/userdocs/intro/#introduction)شروع کنید.                                                                                                                         &#x20;
 
-### For Developers
+### برای توسعه دهندگان
 
-If you are interested in developing with zkSync, view our [Developers Guide](/dev/) and [API Reference](/api).
+اگر علاقه مند به توسعه با zkSync هستید، راهنمای توسعه دهندگان و مرجع API ما را مشاهده کنید.                       &#x20;
 
-### Interested in reading more?
+### علاقه مند به خواندن بیشتر هستید؟
 
-In-depth articles can be found on our [Medium page](https://medium.com/matter-labs).
+مقالات عمیق را می توانید در صفحه مدیوم ​​ما پیدا کنید (پنجره جدید باز می شود).                                                 &#x20;
 
-### Contact
 
-If you have any questions or want to be part of our community, please check out our [contact page](/contact.md).
+
+### تماس
+
+اگر سؤالی دارید یا می خواهید بخشی از انجمن ما باشید، لطفاً صفحه تماس ما را بررسی کنید.                                  &#x20;
