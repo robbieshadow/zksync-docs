@@ -14,5 +14,3 @@
     * [حریم خصوصی](docs/userdocs/hrym-khswsy.md)
     * [نقشه راه](docs/userdocs/roadmap.md)
     * [سوالات متداول](docs/userdocs/faq.md)
-    * [آموزش ها](docs/userdocs/tutorials.md)
-    * [Status page](docs/userdocs/status.md)
