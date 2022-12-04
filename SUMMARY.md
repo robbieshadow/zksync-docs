@@ -1,6 +1,6 @@
 # Table of contents
 
-* [User docs](README.md)
+* [Zksync Docs To Persian](README.md)
   * [به zkSync خوش آمدید](docs/userdocs/README.md)
     * [بررسی اجمالی](docs/userdocs/intro.md)
     * [فن آوری](docs/userdocs/tech.md)
